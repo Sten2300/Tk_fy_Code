@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """ MA3.py
 
 Student:
@@ -105,36 +106,36 @@ def sphere_volume_parallel2(n, d, np=10):
     
 def main():
     # Exc1
-    # dots = [1000, 10000, 100000]
-    # for n in dots:
-    #     approximate_pi(n)
+    dots = [1000, 10000, 100000]
+    for n in dots:
+        approximate_pi(n)
 
     # Exc2
-    # n = 100000
-    # d = 2
-    # print(f'Approx volume of {d} dimentional sphere = {sphere_volume(n, d, 4)}')  #originally only sphere_volume(n, d)
-    # print(f"Actual volume of {d} dimentional sphere = {hypersphere_exact(n,d, 4)}") # + radius of 4.
+    n = 100000
+    d = 2
+    print(f'Approx volume of {d} dimentional sphere = {sphere_volume(n, d, 4)}')  #originally only sphere_volume(n, d)
+    print(f"Actual volume of {d} dimentional sphere = {hypersphere_exact(n,d, 4)}") # + radius of 4.
 
-    # n = 100000
-    # d = 11
-    # print(f'Approx volume of {d} dimentional sphere = {sphere_volume(n, d)}')
-    # print(f"Actual volume of {d} dimentional sphere = {hypersphere_exact(n,d)}")
+    n = 100000
+    d = 11
+    print(f'Approx volume of {d} dimentional sphere = {sphere_volume(n, d)}')
+    print(f"Actual volume of {d} dimentional sphere = {hypersphere_exact(n,d)}")
 
     # Exc3
-    # n = 1000000
-    # d = 11
-    # for i in range(3): # regular
-    #     start = pc()
-    #     sphere_volume(n, d)
-    #     stop = pc()
-    #     print(f"Exc3: non-numba time {i+1} of {d} dim and {n}: {stop-start}")
+    n = 1000000
+    d = 11
+    for i in range(3): # regular
+        start = pc()
+        sphere_volume(n, d)
+        stop = pc()
+        print(f"Exc3: non-numba time {i+1} of {d} dim and {n}: {stop-start}")
 
-    # for i in range(3): #numba
-    #     start = pc()
-    #     sphere_volume_numba(n, d)
-    #     stop = pc()
-    #     print(f"Exc3: the numba time {i+1} of {d} dim and {n}: {stop-start}")        
-    #     #analys: Mycket snabbare efter första kompliering, medan non-numba är konstant samma
+    for i in range(3): #numba
+        start = pc()
+        sphere_volume_numba(n, d)
+        stop = pc()
+        print(f"Exc3: the numba time {i+1} of {d} dim and {n}: {stop-start}")        
+        #analys: Mycket snabbare efter första kompliering, medan non-numba är konstant samma
 
 
     # Exc4
